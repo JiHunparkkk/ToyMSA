@@ -25,7 +25,7 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/users/**", "/h2-console/**").permitAll()
+                        .requestMatchers("/user-service/**", "/h2-console/**").permitAll()
                 )
                 .headers((headers) -> headers.frameOptions(FrameOptionsConfig::sameOrigin))
                 .build();
